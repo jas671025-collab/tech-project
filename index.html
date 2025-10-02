@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軟體工程師個人主頁 - 自動化與量化交易</title>
+    <!-- 載入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 定義字體為 Inter */
+        html { font-family: 'Inter', sans-serif; }
+        
+        /* 1. 實現動態背景效果 */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .dynamic-bg {
+            /* 使用深色漸變，帶有科技感 */
+            background: linear-gradient(-45deg, #0a0a0f, #1e293b, #0a0a0f, #1e293b);
+            background-size: 400% 400%;
+            animation: gradient-shift 20s ease infinite; /* 緩慢且無限循環的動畫 */
+        }
+        
+        /* 2. 連結按鈕的動態效果 */
+        .link-button {
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        .link-button:hover {
+            transform: translateY(-5px); /* 向上抬升效果 */
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.5); /* 綠色光暈陰影 */
+            background-color: #27c05b; /* 懸停時變亮 */
+        }
+        
+        /* 隱藏預設的捲軸，保持畫面簡潔 */
+        body {
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body class="dynamic-bg min-h-screen flex items-center justify-center p-4">
+
+    <!-- 主內容容器 - 響應式寬度控制 (RWD) -->
+    <!-- max-w-sm (手機) 到 max-w-lg (桌面) -->
+    <div id="profile-card" class="w-full max-w-md mx-auto p-6 md:p-8 bg-gray-900 bg-opacity-90 backdrop-blur-sm rounded-xl shadow-2xl text-center">
+
+        <!-- 1. 頭像/個人資訊區塊 -->
+        <div class="mb-8">
+            <!-- 預留頭像位置 - 建議替換為您自己的照片或圖標 -->
+            <div class="w-24 h-24 mx-auto rounded-full bg-gray-700 flex items-center justify-center text-4xl text-white border-4 border-green-500 mb-4">
+                🚀
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2">
+                <span class="text-green-500">SoftDev</span> | 軟體工程師
+            </h1>
+            
+            <p class="text-gray-300 text-lg">
+                專注於 **自動化技術** 及 **量化交易** 系統開發。
+            </p>
+            <p class="text-gray-400 text-sm mt-1">
+                從數據洞察到高效執行，創造無限可能。
+            </p>
+        </div>
+
+        <!-- 2. 連結樹 (Linktree-Style) 區塊 -->
+        <div id="links" class="space-y-4">
+            
+            <!-- 連結 1: GitHub -->
+            <a href="https://github.com/yourusername" target="_blank" class="link-button block w-full py-3 px-6 rounded-lg bg-gray-700 text-white font-semibold text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
+                <span class="flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.793-.258.793-.577 0-.285-.01-1.042-.015-2.043-3.338.724-4.042-1.611-4.042-1.611-.546-1.387-1.334-1.756-1.334-1.756-1.087-.743.083-.728.083-.728 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.492.998.108-.77.42-.1.97-.24-2.665-.304-5.467-1.334-5.467-5.931 0-1.31.465-2.38.123-3.22-.12-.24-.52-1.52.11-3.18 0 0 .969-.312 3.179 1.23.927-.257 1.921-.386 2.916-.391 1.0.005 1.99.134 2.917.391 2.21-1.542 3.179-1.23 3.179-1.23.63 1.66.23 2.94.11 3.18.33.84.123 1.91.123 3.22 0 4.609-2.802 5.624-5.475 5.922.42.36.794 1.127.794 2.275 0 1.64-.015 2.969-.015 3.379 0 .32.193.69.799.574 4.769-1.588 8.2-6.085 8.2-11.387c0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub 專案
+                </span>
+            </a>
+
+            <!-- 連結 2: LinkedIn -->
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="link-button block w-full py-3 px-6 rounded-lg bg-gray-700 text-white font-semibold text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
+                <span class="flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.77 24 1.73 24h20.54c.96 0 1.73-.77 1.73-1.73V1.73c0-.96-.77-1.73-1.73-1.73zM7.18 20.37H3.84V9.62h3.34v10.75zM5.51 8.29c-1.11 0-2.02-.91-2.02-2.02s.91-2.02 2.02-2.02c1.11 0 2.02.91 2.02 2.02s-.91 2.02-2.02 2.02zM20.37 20.37h-3.34v-5.6c0-1.34-.48-2.25-1.68-2.25-1.34 0-2.14.9-2.49 1.77-.12.3-.15.68-.15 1.05v5.03H9.4V9.62h3.29v1.43c.44-.76 1.34-1.85 2.97-1.85 2.16 0 3.84 1.41 3.84 4.47v6.7z"/></svg>
+                    LinkedIn 專業聯繫
+                </span>
+            </a>
+
+            <!-- 連結 3: Email (使用 JavaScript 複製，避免爬蟲) -->
+            <button id="email-button" class="link-button block w-full py-3 px-6 rounded-lg bg-gray-700 text-white font-semibold text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
+                <span class="flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 5.5H2A1.5 1.5 0 0 0 .5 7v10A1.5 1.5 0 0 0 2 18.5h20a1.5 1.5 0 0 0 1.5-1.5V7A1.5 1.5 0 0 0 22 5.5zm-1 2L12 13 3 7.5v9h18v-9z"/></svg>
+                    Email 聯繫 (點擊複製)
+                </span>
+            </button>
+            <p id="copy-message" class="text-sm text-yellow-400 opacity-0 transition-opacity duration-300 mt-2">
+                <!-- 複製成功訊息 -->
+            </p>
+
+            <!-- 連結 4: Instagram (Linktree 樣式) -->
+            <a href="https://instagram.com/yourusername" target="_blank" class="link-button block w-full py-3 px-6 rounded-lg bg-gray-700 text-white font-semibold text-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
+                <span class="flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.013 4.85.074 1.052.053 1.52.223 1.83.348.402.166.755.378 1.077.7.324.324.538.677.7 1.077.125.31.295.778.348 1.83.06.87.07 1.05.07 4.85s-.01 3.98-.07 4.85c-.053 1.052-.223 1.52-.348 1.83-.166.402-.378.755-.7 1.077-.324.324-.677.538-1.077.7-.31.125-.778.295-1.83.348-.87.06-1.05.07-4.85.07s-3.98-.01-4.85-.07c-1.052-.053-1.52-.223-1.83-.348-.402-.166-.755-.378-1.077-.7-.324-.324-.538-.677-.7-1.077-.125-.31-.295-.778-.348-1.83-.06-.87-.07-1.05-.07-4.85s.01-3.98.07-4.85c.053-1.052.223-1.52.348-1.83.166-.402.378-.755.7-1.077.324-.324.677-.538 1.077-.7.31-.125.778-.295 1.83-.348.87-.06 1.05-.07 4.85-.07zm0-2.163c-3.266 0-3.673.014-4.94.075-1.222.062-2.07.24-2.812.536-.71.278-1.32.656-1.92 1.256s-.978 1.21-1.256 1.92c-.296.742-.474 1.59-.536 2.812-.06 1.267-.075 1.674-.075 4.94s.015 3.673.075 4.94c.062 1.222.24 2.07.536 2.812.278.71.656 1.32 1.256 1.92s1.21.978 1.92 1.256c.742.296 1.59.474 2.812.536 1.267.06 1.674.075 4.94.075s3.673-.015 4.94-.075c1.222-.062 2.07-.24 2.812-.536.71-.278 1.32-.656 1.92-1.256s.978-1.21 1.256-1.92c.296-.742.474-1.59.536-2.812.06-1.267.075-1.674.075-4.94s-.015-3.673-.075-4.94c-.062-1.222-.24-2.07-.536-2.812-.278-.71-.656-1.32-1.256-1.92s-1.21-.978-1.92-1.256c-.742-.296-1.59-.474-2.812-.536-1.267-.06-1.674-.075-4.94-.075zm0 2.875c3.344 0 3.766.012 4.796.062 1.01.05 1.402.21 1.696.335.342.133.56.28.74.46.18.18.327.397.46.74.125.294.285.686.335 1.696.05 1.03.062 1.452.062 4.796s-.012 3.766-.062 4.796c-.05 1.01-.21 1.402-.335 1.696-.133.342-.28.56-.46.74-.18.18-.397.327-.74.46-.294.125-.686.285-1.696.335-1.03.05-1.452.062-4.796.062s-3.766-.012-4.796-.062c-1.01-.05-1.402-.21-1.696-.335-.342-.133-.56-.28-.74-.46-.18-.18-.327-.397-.46-.74-.125-.294-.285-.686-.335-1.696-.05-1.03-.062-1.452-.062-4.796s.012-3.766.062-4.796c.05-1.01.21-1.402.335-1.696.133-.342.28-.56.46-.74.18-.18.397-.327.74-.46.294-.125.686-.285 1.696-.335 1.03-.05 1.452-.062 4.796-.062zm0 3.166c-3.15 0-5.717 2.567-5.717 5.717s2.567 5.717 5.717 5.717 5.717-2.567 5.717-5.717-2.567-5.717-5.717-5.717zm0 9.25c-2.063 0-3.533-1.61-3.533-3.533s1.61-3.533 3.533-3.533 3.533 1.61 3.533 3.533-1.61 3.533-3.533 3.533zm4.567-7.442c-.595 0-1.08-.485-1.08-1.08s.485-1.08 1.08-1.08c.595 0 1.08.485 1.08 1.08s-.485 1.08-1.08 1.08z"/></svg>
+                    Instagram 生活
+                </span>
+            </a>
+
+        </div>
+        
+        <!-- 3. 底部資訊 -->
+        <p class="text-xs text-gray-500 mt-8">
+            © 2024 Your Name. All Rights Reserved.
+        </p>
+        <p class="text-xs text-gray-600 mt-1">
+            由 Gemini 輔助設計
+        </p>
+
+    </div>
+
+    <script>
+        // ----------------------------------------------------
+        // JavaScript 處理 Email 複製功能
+        // ----------------------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailButton = document.getElementById('email-button');
+            const copyMessage = document.getElementById('copy-message');
+            // 請將此替換為您的實際 Email 地址
+            const userEmail = "your.professional.email@example.com"; 
+
+            // 確保該函數在 iframe 環境中可用
+            const copyToClipboard = (text) => {
+                try {
+                    // 使用 document.execCommand('copy') 來確保在 iframe 環境下成功複製
+                    const textArea = document.createElement("textarea");
+                    textArea.value = text;
+                    textArea.style.position = "fixed";  // 避免滾動
+                    textArea.style.opacity = "0";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    return true;
+                } catch (err) {
+                    console.error('無法複製到剪貼簿:', err);
+                    return false;
+                }
+            };
+
+            emailButton.addEventListener('click', () => {
+                if (copyToClipboard(userEmail)) {
+                    copyMessage.textContent = `Email (${userEmail}) 已成功複製！`;
+                    copyMessage.classList.remove('opacity-0');
+                    copyMessage.classList.add('opacity-100');
+
+                    // 訊息顯示後淡出
+                    setTimeout(() => {
+                        copyMessage.classList.remove('opacity-100');
+                        copyMessage.classList.add('opacity-0');
+                    }, 2000);
+                } else {
+                    copyMessage.textContent = "複製失敗，請手動複製。";
+                    copyMessage.classList.remove('opacity-0');
+                    copyMessage.classList.add('opacity-100');
+                    setTimeout(() => {
+                        copyMessage.classList.remove('opacity-100');
+                        copyMessage.classList.add('opacity-0');
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
